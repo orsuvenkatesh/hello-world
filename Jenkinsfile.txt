@@ -10,7 +10,7 @@ pipeline{
                
                 script{
                     
-                   git 'https://github.com/orsuvenkatesh/hello-world.git'
+                   git branch: 'main', url: 'https://github.com/orsuvenkatesh/hello-world.git
                 }
             }
         }
