@@ -1,18 +1,21 @@
-pipeline{
-    
-    agent any 
-    
+pipeline {
+    agent any
+
     stages {
-        
-        stage('Git Checkout'){
-            
-            steps{
-               
-                script{
-                    
-                   git branch: 'main', url: 'https://github.com/orsuvenkatesh/hello-world.git
-                }
+        stage('checkout') {
+            steps {
+                echo 'Hello World'
             }
-        }
      }
-  }
+        stage('build') {
+            steps {
+                echo 'Hello World' 
+            }
+     }
+        stage('deploy') {
+            steps {
+                echo 'i am venkatesh'
+            }
+     }
+            }
+     }
