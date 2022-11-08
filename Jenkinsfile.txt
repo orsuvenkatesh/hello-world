@@ -2,20 +2,30 @@ pipeline {
     agent any
 
     stages {
-        stage('checkout') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                echo 'Build Application'
             }
-     }
-        stage('build') {
+        }
+       stage('Test') {
             steps {
-                echo 'Hello World' 
+                echo 'Test  Application'
             }
-     }
-        stage('deploy') {
+        }
+        stage('Deploy') {
             steps {
-                echo 'i am venkatesh'
+                echo 'Deploy Application'
             }
-     }
-            }
-     }
+        }
+    }
+    post 
+    {
+        always 
+        {
+            emailext body: 'build success', subject: 'pipeline status', to: 'venkateshorsu8@gmail.com'
+            
+        }
+    }
+}
+
+ 
